@@ -1,6 +1,6 @@
 <?php
 
-// Renvoie la liste des voitures du blog
+// Renvoie la liste des voitures
 function getVoitures() {
     $bdd = getBdd();
     $voitures = $bdd->query('select * from vehicules'
