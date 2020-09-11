@@ -1,11 +1,11 @@
-<?php $titre = 'CarLocation'; ?>
+<?php $this->titre = "CarLocatiion"; ?>
 
-<?php ob_start(); ?>
-<?php foreach ($voitures as $voiture): ?>
+<?php foreach ($voitures as $voiture):
+    ?>
     <article>
         <header>
-            <a href="<?= "voiture.php?id=" . $voiture['id'] ?>">
-                <h1 class="voiture"><?= $voiture['margue'] ?></h1>
+            <a href="<?= "voiture/index/" . $this->nettoyer($voiture['id']) ?>">
+                <h1 class="voiture"><?= $this->nettoyer($voiture['marque']) ?></h1>
             </a>
         </header>
         <p>
@@ -29,6 +29,3 @@
     </article>
     <hr />
 <?php endforeach; ?>
-<?php $contenu = ob_get_clean(); ?>
-
-<?php require 'gabarit.php'; ?>
