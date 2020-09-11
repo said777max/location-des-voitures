@@ -11,7 +11,7 @@ class ControleurAccueil extends Controleur {
         $this->voiture = new Voiture();
     }
 
-    // Affiche la liste de tous les voitures du blog
+    // Affiche la liste de tous les voitures
     public function index() {
         $billets = $this->voiture->getVoitures();
         $this->genererVue(array('voitures' => $voitures));
