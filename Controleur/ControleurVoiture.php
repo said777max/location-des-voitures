@@ -5,7 +5,7 @@ require_once 'Modele/Voiture.php';
 /**
  * Contrôleur des actions liées aux voitures
  *
- * @author Mohammed Said Dahchar
+ * @author Dahchar Mohammed Said
  */
 class ControleurVoiture extends Controleur {
 
@@ -20,11 +20,10 @@ class ControleurVoiture extends Controleur {
 
     // Affiche les détails sur un voiture
     public function index() {
-        $id = $this->requete->getParametre("id");
+        $idVoiture = $this->requete->getParametre("id");
         
         $voiture = $this->voiture->getVoiture($id);
         
         $this->genererVue(array('voiture' => $voiture));
     }
-
 }

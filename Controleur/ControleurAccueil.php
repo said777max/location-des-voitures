@@ -5,15 +5,15 @@ require_once 'Modele/Voiture.php';
 
 class ControleurAccueil extends Controleur {
 
-    private $Voiture;
+    private $voiture;
 
     public function __construct() {
         $this->voiture = new Voiture();
     }
 
-    // Affiche la liste de tous les voitures du blog
+    // Affiche la liste de tous les voitures
     public function index() {
-        $billets = $this->voiture->getVoitures();
+        $voitures = $this->voiture->getVoitures();
         $this->genererVue(array('voitures' => $voitures));
     }
 

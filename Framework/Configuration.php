@@ -1,15 +1,13 @@
 <?php
 
 /**
- * Classe de gestion des paramètres de configuration
- * 
+ * Classe de gestion des paramètres de configuration.
  *
  *
- * @version 1.0
  * @author Dahchar Mohammed Said
  */
-class Configuration {
-
+class Configuration
+{
     /** Tableau des paramètres de configuration */
     private static $parametres;
 
@@ -20,9 +18,11 @@ class Configuration {
      * @param string $valeurParDefaut Valeur à renvoyer par défaut
      * @return string Valeur du paramètre
      */
-    public static function get($nom, $valeurParDefaut = null) {
-        if (isset(self::getParametres()[$nom])) {
-            $valeur = self::getParametres()[$nom];
+    public static function get($nom, $valeurParDefaut = null)
+    {
+        $parametres = self::getParametres();
+        if (isset($parametres[$nom])) {
+            $valeur = $parametres[$nom];
         }
         else {
             $valeur = $valeurParDefaut;
@@ -37,7 +37,8 @@ class Configuration {
      * @return array Tableau des paramètres
      * @throws Exception Si aucun fichier de configuration n'est trouvé
      */
-    private static function getParametres() {
+    private static function getParametres()
+    {
         if (self::$parametres == null) {
             $cheminFichier = "Config/dev.ini";
             if (!file_exists($cheminFichier)) {
