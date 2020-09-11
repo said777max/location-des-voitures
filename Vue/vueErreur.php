@@ -1,3 +1,7 @@
-<?php $this->titre = "CarLocation - Erreur !"; ?>
+<?php $titre = 'Mon Blog'; ?>
 
-<p><?= $msgErreur ?></p>
+<?php ob_start() ?>
+<p>Une erreur est survenue : <?= $msgErreur ?></p>
+<?php $contenu = ob_get_clean(); ?>
+
+<?php require 'gabarit.php'; ?>

@@ -1,12 +1,11 @@
-<?php $this->titre = "CarLocation - " . $voiture['marque']; ?>
+<?php $titre = "CarLocation - " . $voiture['marque']; ?>
 
+<?php ob_start(); ?>
 <article>
-        <header>
-            <a href="<?= "voiture/index/" . $this->nettoyer($voiture['id']) ?>">
-                <h1 class="voiture"><?= $this->nettoyer($voiture['marque']) ?></h1>
-            </a>
-        </header>
-        <p>
+    <header>
+        <h1 class="voiture"><?= $voiture['marque'] ?></h1>
+    </header>
+    <p>
             <table>
         <tr><img src="<?= $voiture['image']  ?>"></tr>
     <tr><td>marque</td><td><?= $this->nettoyer($voiture['marque']) ?></td></tr>
@@ -24,5 +23,10 @@
     <tr><td>date de sortie</td><td><?= $this->nettoyer($voiture['jour'])." - ".$this->nettoyer($voiture['mois'])." - ".$this->nettoyer($voiture['annee']) ?></td></tr>
 </table>
 </p>
-    </article>
+</article>
+<hr />
+<header>
+<?php endforeach; ?>
+<?php $contenu = ob_get_clean(); ?>
 
+<?php require 'gabarit.php'; ?>
