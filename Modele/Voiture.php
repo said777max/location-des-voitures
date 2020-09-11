@@ -1,30 +1,30 @@
 <?php
 
-require_once 'Framework/Modele.php';
+require_once 'Modele/Modele.php';
 
 /**
- * Fournit les services d'accès aux genres musicaux 
+ * 
  * 
  * @author Dahchar Mohammed Said
  */
 class Voiture extends Modele {
 
-    /** Renvoie la liste des voitures du blog
+    /** Renvoie la liste des voitures
      * 
      * @return PDOStatement La liste des voitures
      */
-    public function getVoitures() {
+    public function getVoiture() {
         $sql = 'select * from vehicule'
                 . ' order by id desc';
         $voitures = $this->executerRequete($sql);
         return $voitures;
     }
 
-    /** Renvoie les informations sur une voiture
+    /** Renvoie les informations sur un voiture
      * 
-     * @param int $id L'identifiant d'une voiture
-     * @return array La voiture
-     * @throws Exception Si l'identifiant d'une voiture est inconnu
+     * @param int $id L'identifiant du voiture
+     * @return array Le voiture
+     * @throws Exception Si l'identifiant du voiture est inconnu
      */
     public function getVoiture($id) {
         $sql = 'select * from vehicule'
@@ -36,16 +36,4 @@ class Voiture extends Modele {
             throw new Exception("Aucun voiture ne correspond à l'identifiant '$id'");
     }
 
-    /**
-     * Renvoie le nombre total de voitures
-     * 
-     * @return int Le nombre de voitures
-     */
-    public function getNombreVoitures()
-    {
-        $sql = 'select count(*) as nbVoitures from vehicule';
-        $resultat = $this->executerRequete($sql);
-        $ligne = $resultat->fetch();  // Le résultat comporte toujours 1 ligne
-        return $ligne['nbVoitures'];
-    }
 }
