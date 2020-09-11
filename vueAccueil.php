@@ -23,7 +23,7 @@
     <tr><td>transmission</td><td><?= $this->nettoyer($voiture['transmission']) ?></td></tr>
     <tr><td>acceleration</td><td><?= $this->nettoyer($voiture['acceleration']) ?></td></tr>
     <tr><td>puissance_moteur</td><td><?= $this->nettoyer($voiture['puissance_moteur']) ?></td></tr>
-    <tr><td>date de sortie</td><td><?= $this->nettoyer($voiture['jour'])." - ".$this->nettoyer($voiture['mois'])." - ".$this->nettoyer($voiture['annee']) ?></td></tr>
+    <tr><td>date de sortie</td><td><time><?= $this->nettoyer($voiture['jour'])." - ".$this->nettoyer($voiture['mois'])." - ".$this->nettoyer($voiture['annee']) ?></time></td></tr>
 </table>
 </p>
     </article>
